@@ -1,6 +1,7 @@
 import 'package:app_productos/screens/check_screen.dart';
 import 'package:app_productos/screens/register_screen.dart';
 import 'package:app_productos/screens/screens.dart';
+import 'package:app_productos/services/notifications.dart';
 import 'package:app_productos/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         'register': (_) => RegisterScreen(),
         'checkIn': (_) => CheckAuthScreen()
       },
+      scaffoldMessengerKey: NotificationsService.messengerKey,
       theme:
           ThemeData.light().copyWith(scaffoldBackgroundColor: Colors.grey[300]),
     );
