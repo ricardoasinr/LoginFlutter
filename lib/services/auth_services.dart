@@ -26,8 +26,8 @@ class AuthService extends ChangeNotifier {
 
     if (decodeResp.containsKey('idToken')) {
       //return decodeResp['idToken'];
-      return null;
       await storage.write(key: 'token', value: decodeResp['idToken']);
+      return null;
     } else {
       return decodeResp['error']['message'];
     }
@@ -49,9 +49,9 @@ class AuthService extends ChangeNotifier {
 
     if (decodeResp.containsKey('idToken')) {
       //return decodeResp['idToken'];
-      return null;
 
       await storage.write(key: 'token', value: decodeResp['idToken']);
+      return null;
     } else {
       return decodeResp['error']['message'];
     }
@@ -62,7 +62,7 @@ class AuthService extends ChangeNotifier {
     return null;
   }
 
-  //Future<String> readToken() async {
-  //return await storage.read(key: 'token') ?? '';
-  // }
+  Future<String> readToken() async {
+    return await storage.read(key: 'token') ?? '';
+  }
 }
