@@ -1,6 +1,7 @@
 //import 'package:app_productos/widgets/Auth_background.dart';
 import 'package:app_productos/providers/login_from_provider.dart';
 import 'package:app_productos/services/auth_services.dart';
+import 'package:app_productos/services/notifications.dart';
 import 'package:app_productos/ui/input_decoration.dart';
 import 'package:app_productos/widgets/card_container.dart';
 import 'package:app_productos/widgets/widgets.dart';
@@ -118,6 +119,7 @@ class LoginForm extends StatelessWidget {
                         Navigator.pushReplacementNamed(context, 'home');
                       } else {
                         print(error);
+                        NotificationsService.showSnackBar(error);
                         loginForm.isLoading = false;
                       }
                     } else {
