@@ -10,6 +10,8 @@ class AuthService extends ChangeNotifier {
   final String _FirebaseToken = 'AIzaSyDUOBZ54LkIdjFgZmylV7M36D_7Nv9iTqo';
   final storage = new FlutterSecureStorage();
 
+  //Auth
+
   Future<String?> createUser(String email, String password) async {
     final Map<String, dynamic> authData = {
       'email': email,
